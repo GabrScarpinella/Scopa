@@ -92,6 +92,30 @@ func roboescolha(mesa []carta, mao []carta, nivel int)int {
 		return n;
 	}
 }
+
+func pontosmn(a int, b int) int{
+	if b==7{
+		return b;
+	}
+	//a partir daqui b!=7
+	if a==7{
+		return a;
+	}else if a==6{
+		return a;
+	}else if a==1&&(((b<6)&&(b>1))||b>7){
+		return a;
+	}else if a==5&&(((b<6)&&(b>1))||b>7){
+		return a;
+	}else if a==4&&(((b<5)&&(b>1))||b>7){
+		return a;
+	}else if a==3&&(((b<4)&&(b>1))||b>7){
+		return a;
+	}else if a==2&&(b==2||b>7){
+		return a;
+	}else{
+		return b;
+	}
+}
 func main(){
 	deleta:="\033[2J";
 	var vez int=0;//se par, vez do jogador; se impar, vez do computador 
@@ -582,19 +606,19 @@ func main(){
 	for i:=0; i<len(montejogador); i++{
 		switch(montejogador[i].naipe){
 			case "denara":
-				if montejogador[i].valor>mnj[0]{
+				if pontosmn(montejogador[i].valor, mnj[0])==montejogador[i].valor{//montejogador[i].valor>mnj[0]{
 					mnj[0]=montejogador[i].valor;
 				}
 			case "paus":
-				if montejogador[i].valor>mnj[1]{
+				if pontosmn(montejogador[i].valor, mnj[1])==montejogador[i].valor{//montejogador[i].valor>mnj[1]{
 					mnj[1]=montejogador[i].valor;
 				}
 			case "espadas":
-				if montejogador[i].valor>mnj[2]{
+				if pontosmn(montejogador[i].valor, mnj[2])==montejogador[i].valor{//montejogador[i].valor>mnj[2]{
 					mnj[2]=montejogador[i].valor;
 				}
 			case "copas":
-				if montejogador[i].valor>mnj[3]{
+				if pontosmn(montejogador[i].valor, mnj[3])==montejogador[i].valor{//montejogador[i].valor>mnj[3]{
 					mnj[3]=montejogador[i].valor;
 				}
 		}
@@ -602,20 +626,20 @@ func main(){
 	for i:=0; i<len(montecomputador); i++{
 		switch(montecomputador[i].naipe){
 			case "denara":
-				if montecomputador[i].valor>mnc[0]{
-					mnc[0]=montecomputador[i].valor;
+				if pontosmn(montecomputador[i].valor, mnj[0])==montecomputador[i].valor{//montecomputador[i].valor>mnj[0]{
+					mnj[0]=montecomputador[i].valor;
 				}
 			case "paus":
-				if montecomputador[i].valor>mnc[1]{
-					mnc[1]=montecomputador[i].valor;
+				if pontosmn(montecomputador[i].valor, mnj[1])==montecomputador[i].valor{//montecomputador[i].valor>mnj[1]{
+					mnj[1]=montecomputador[i].valor;
 				}
 			case "espadas":
-				if montecomputador[i].valor>mnc[2]{
-					mnc[2]=montecomputador[i].valor;
+				if pontosmn(montecomputador[i].valor, mnj[2])==montecomputador[i].valor{//montecomputador[i].valor>mnj[2]{
+					mnj[2]=montecomputador[i].valor;
 				}
 			case "copas":
-				if montecomputador[i].valor>mnc[3]{
-					mnc[3]=montecomputador[i].valor;
+				if pontosmn(montecomputador[i].valor, mnj[3])==montecomputador[i].valor{//montecomputador[i].valor>mnj[3]{
+					mnj[3]=montecomputador[i].valor;
 				}
 		}
 	}
