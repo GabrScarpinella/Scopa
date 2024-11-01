@@ -20,6 +20,7 @@ Quando todos os jogadores ficam sem cartas, são distridas mais três cartas, e 
 
 Quando é jogada a última carta do último round, o último jogador a capturar é recompensado com as cartas restantes na mesa, e então se calculam os pontos.
 
+
 Contagem de pontos:
 A contagem é feita de acordo com a wikipédia(pt.wikipedia.org/wiki/Escopa)
 Um ponto para cada escopa;
@@ -27,3 +28,10 @@ Um ponto por ter em seu monte a sete de ouros;
 Um ponto por ter o maior monte;
 Um ponto por ter a maior quantidade de cartas do naipe de ouros;
 um ponto por conseguir o "melhor número"(confira a wikipédia).
+
+
+O que faz cada robô?:
+0: Tenta sempre deitar a carta na mesa;
+1: Escolhe uma carta aleatória;
+2: Escolhe sempre a primeira carta de sua mão;
+3: Tenta sempre capturar uma carta (ou mais).
