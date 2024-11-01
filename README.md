@@ -1,0 +1,2 @@
+# Scopa
+Jogo escopa.
