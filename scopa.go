@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"time"//a fim de que o jogador possa ler o resultado
 )
@@ -19,7 +20,7 @@ func novacarta(naipe string, valor int) carta{
 func roboescolha(mesa []carta, mao []carta, nivel int)int {
 	var pontcarta []int;
 	for i:=0; i<len(mao); i++{
-		pontcarta=append(pontcarta, 0);
+		pontcarta=append(pontcarta, 0);//tentativa de fazer um robô melhor do que o 2(seria trocar esse 0 por -10)
 	}
 	var n int=0;//qual carta
 	for i:=0; i<len(pontcarta); i++{
@@ -60,7 +61,7 @@ func roboescolha(mesa []carta, mao []carta, nivel int)int {
 		return rand.Intn(len(mao));
 	}else if nivel==2{//pega a primeira
 		return 0;
-	}else{//tenta sempre capturar
+	}else if nivel==3{//tenta sempre capturar
 		for i:=0; i<len(mao); i++{
 			for j:=0; j<len(mesa); j++{
 				if mesa[j].valor==mao[i].valor{
@@ -87,6 +88,37 @@ func roboescolha(mesa []carta, mao []carta, nivel int)int {
 		//teoricamente a que tiver o menor número será a melhor
 		for i:=0; i<len(pontcarta); i++{
 			if pontcarta[i]>pontcarta[n]{
+				n=i;
+			}
+		}
+		return n;
+	}else{//tenta sempre capturar (com uma reviravolta?)
+		for i:=0; i<len(mao); i++{
+			for j:=0; j<len(mesa); j++{
+				if mesa[j].valor==mao[i].valor{
+					pontcarta[i]-=1;
+				}
+			}
+			for j:=0; j<len(mesa)-1; j++{
+				for k:=j+1; k<len(mesa); k++{
+					if mesa[j].valor+mesa[k].valor==mao[i].valor{
+						pontcarta[i]+=2;
+					}
+				}
+			}
+			for j:=0; j<len(mesa)-2; j++{
+				for k:=j+1; k<len(mesa)-1; k++{
+					for h:=k+1; h<len(mesa); h++{
+						if mesa[j].valor+mesa[k].valor+mesa[h].valor==mao[i].valor{
+							pontcarta[i]+=3;
+						}
+					}
+				}
+			}
+		}
+		//teoricamente a que tiver o menor número será a melhor
+		for i:=0; i<len(pontcarta); i++{
+			if math.Abs(float64(pontcarta[i]))>math.Abs(float64(pontcarta[n])){
 				n=i;
 			}
 		}
@@ -171,7 +203,7 @@ func main(){
 
 	fmt.Println("Quer começar? [0:não, 1:sim]");
 	fmt.Scanln(&quercomecar);
-	fmt.Println("Contra que robô você quer jogar?[0 a 2 - fácil, 3 - médio]");
+	fmt.Println("Contra que robô você quer jogar?[0 a 2 - fácil, 3 - médio, 4-difícil?]");
 	fmt.Scanln(&nivelcomputador);
 	if quercomecar{
 		vez=0;
