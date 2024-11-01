@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"//a fim de que o jogador possa ler o resultado
 )
 
 type carta struct{
@@ -117,7 +118,7 @@ func pontosmn(a int, b int) int{
 	}
 }
 func main(){
-	deleta:="\033[2J";
+	//deleta:="\033[2J";
 	var vez int=0;//se par, vez do jogador; se impar, vez do computador 
 	var baralho [] carta;//vai ter 40
 	var naipes = [4] string{"denara", "paus", "espadas", "copas"};
@@ -206,8 +207,11 @@ func main(){
 					l++;
 				}
 			}
+			/*
 			//imprime as cartas
-			fmt.Print(string(deleta));
+			//fmt.Print(string(deleta));
+			fmt.Println("");
+			fmt.Println("")
 			fmt.Print("		");
 			for i:=0; i<len(maocomputador); i++{
 				fmt.Print("[] ");
@@ -237,9 +241,41 @@ func main(){
 				fmt.Print("  ");
 			}
 			fmt.Println("\n");
+			*/
 			//goto fim;
 			//jogo
 			if vez%2==0{
+			//imprime as cartas
+			fmt.Println("");
+			fmt.Println("")
+			fmt.Print("		");
+			for i:=0; i<len(maocomputador); i++{
+				fmt.Print("[] ");
+			}
+			fmt.Println("\n");
+			for i:=0; i<len(mesa); i++{
+				fmt.Print("[");
+				fmt.Print(mesa[i].valor);
+				fmt.Print(" de ");
+				fmt.Print(mesa[i].naipe);
+				fmt.Print("]   ");
+			}
+			//fmt.Println(mesa);
+			fmt.Println("");
+			fmt.Println("");
+			//fmt.Println(maojogador);
+			fmt.Print("   ");
+			for i:=0; i<len(maojogador); i++{
+				fmt.Print(i);
+				fmt.Print(":");
+				fmt.Print("[");
+				fmt.Print(maojogador[i].valor);
+				fmt.Print(" de ");
+				fmt.Print(maojogador[i].naipe);
+				fmt.Print("]");
+				fmt.Print("  ");
+			}
+			fmt.Println("\n");
 				coletadedados:
 				fmt.Scanln(&escolhajogador);
 				if escolhajogador>=len(maojogador)||escolhajogador<0{
@@ -699,6 +735,7 @@ func main(){
 	}else if pontosc>pontosj{
 		fmt.Println("Computador ganhou.");
 	}
+	time.Sleep(20*time.Second);
 	//verificações
 	/*
 	for i:=0; i<len(baralho); i++{
