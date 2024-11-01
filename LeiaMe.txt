@@ -1,0 +1,29 @@
+Como jogar escopa:(enxertos recolhidos da wikipédia, partes do jogo físico foram removidas ou alteradas)
+Cada jogador recebe três cartas. Quatro cartas são postas viradas para cima na mesa.
+
+Esse jogador têm duas opções:
+.Colocar uma carta na mesa
+.Jogar uma carta para capturar (trocar) uma ou mais cartas
+
+A captura é feita ao comparar o valor da carta jogada com as cartas da mesa. Tanto a carta jogada quanto a(s) capturada(s) são movidas para o monte de cartas capturadas. Para capturar é preciso que a soma dos valores seja exata (nem faltar nem sobrar).
+
+Por exemplo: Um jogador têm na mão um 2 de ouros, 5 de espadas e 7 de paus. Na mesa há um ás(1) de ouros, 5 de paus e 6 de espadas. As opções do jogador são:
+.Colocar o 2 de ouros na mesa;
+.Capturar o 5 de paus usando o 5 de espadas, e colocar as duas cartas no seu monte;
+.Capturar o 6 de espadas e o ás de ouros usando o sete de paus, e colocar as duas cartas no seu monte.
+
+Não é legal colocar na mesa uma carta que tem a possibilidade de capturar.
+Se um jogador captura as últimas cartas da mesa, ele varreu (scopa), e tem um ponto adicional.
+Em uma situação onde uma carta tem várias possibilidades da captura, o jogador é forçado a dar preferência ao menor número de cartas.
+
+Quando todos os jogadores ficam sem cartas, são distridas mais três cartas, e o jogo é retomado. Isso é repetido até as cartas do baralho acabarem. A mesa não é reabastecida com cartas: se as cartas na mesa acabaram, significa que o próximo jogador não tem capturas legais e deve colocar uma carta na mesa.
+
+Quando é jogada a última carta do último round, o último jogador a capturar é recompensado com as cartas restantes na mesa, e então se calculam os pontos.
+
+Contagem de pontos:
+A contagem é feita de acordo com a wikipédia(pt.wikipedia.org/wiki/Escopa)
+Um ponto para cada escopa;
+Um ponto por ter em seu monte a sete de ouros;
+Um ponto por ter o maior monte;
+Um ponto por ter a maior quantidade de cartas do naipe de ouros;
+um ponto por conseguir o "melhor número"(confira a wikipédia).
