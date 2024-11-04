@@ -34,4 +34,5 @@ O que faz cada robô?:
 0: Tenta sempre deitar a carta na mesa;
 1: Escolhe uma carta aleatória;
 2: Escolhe sempre a primeira carta de sua mão;
-3: Tenta sempre capturar uma carta (ou mais).
+3: Tenta sempre capturar uma carta (ou mais);
+4: Faz o mesmo que o robô 3, mas prioriza capturar mais de uma carta. 
