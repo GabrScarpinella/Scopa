@@ -36,3 +36,4 @@ O que faz cada robô?:
 2: Escolhe sempre a primeira carta de sua mão;
 3: Tenta sempre capturar uma carta (ou mais);
 4: Faz o mesmo que o robô 3, mas prioriza capturar mais de uma carta. 
+5: Similar ao robô 4, mas prioriza a captura de setes, cartas do naipe de ouros e escopas
