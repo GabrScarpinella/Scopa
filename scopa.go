@@ -1,4 +1,4 @@
-package main//esse é idêntico ao scopatroca.go, mas não se escolhe quem começa e tem um robô nível 5
+package main
 
 import (
 	"fmt"
